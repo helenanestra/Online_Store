@@ -58,6 +58,11 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
+class CategoryListView(LoginRequiredMixin, ListView):
+    model = Category
+    template_name = 'product_list.html'
+    context_object_name = 'products'
+
 
 def counter(request):
     # Number of visits to this view, stored in the session variable.
