@@ -19,6 +19,7 @@ from products.views import ProductListView
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from .views import cart_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', views.home_view, name='home'),
+    path('cart/', cart_view),
     ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

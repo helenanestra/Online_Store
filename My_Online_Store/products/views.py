@@ -10,7 +10,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 
-class ProductListView(LoginRequiredMixin, ListView):
+class ProductListView(ListView):
     model = Product
     template_name = 'product_list.html'
     context_object_name = 'products'
@@ -58,10 +58,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class CategoryListView(LoginRequiredMixin, ListView):
-    model = Category
-    template_name = 'product_list.html'
-    context_object_name = 'products'
+
 
 
 def counter(request):
