@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <title>Small dog breeds shop</title>
@@ -29,49 +31,29 @@
         }
         var csrftoken = getToken('csrftoken');
     </script>
-
+{% block stylesheet %}{% endblock %}
 </head>
 <body>
-{%load static%}
 {% include 'Bootstrap/Navbar.html' %}
 
-<!--<div class="container-fluid">
-    <div class="row content">
-        <div class="col-sm-3 sidenav">
-            <h4>Small dog breed shop</h4>
-            <ul class="nav nav-pills nav-stacked">
-                {% if user.is_authenticated %}
-                    <li>User: {{ user.get_username }}</li>
-                    <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-                {% endif %}
-                <li><a href="{% url 'product_list' %}">Product list</a></li>
-                {% if perms.products.create_product %}
-                <li><a href="{% url 'product_create' %}">Create a product</a></li>
-                {%endif%}
-                <li><a href="{% url 'counter' %}">Visits count page</a></li>
-            </ul>
-        </div>-->
 
-
-    <div class="col-sm-9">
-            <div id="cart" style="float:right"><a href="/cart">Items in Cart </a>:<span id="cart-items">0</span></div>
+<div class="col-sm-9">
+            <div  style="float:right"><a href="/cart/">Items in Cart</a>:<span id="cart-items">0</span></div>
             <hr>
             {% block content %}{% endblock %}
         </div>
-    </div>
-</div>
+
 
 <footer class="container-fluid">
     <p></p>
 </footer>
+
 <!-- javascript block tag -->
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
 {% block javascript %}{% endblock %}
 </body>

@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
@@ -12,8 +13,9 @@
 <table id="display-cart" class="table">
 
 </table>
+<a class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
 {% endblock %}
 
-{% block script %}
+{% block javascript %}
 <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 {% endblock %}
