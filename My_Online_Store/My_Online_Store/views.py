@@ -11,6 +11,9 @@ import json
 import datetime
 
 
+def register_view(request):
+    context = {}
+    return render(request, 'register.html', context)
 
 
 def home_view(request):

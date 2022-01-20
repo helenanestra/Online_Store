@@ -19,7 +19,7 @@ from products.views import ProductListView
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from .views import cart_view, checkout_view, processOrder, thankyou
+from .views import cart_view, checkout_view, processOrder, thankyou, register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('cart/', cart_view, name='cart'),
     path('checkout/', checkout_view, name='checkout'),
     path('process_order/', processOrder, name="process_order"),
+    path('register/', register_view, name="register"),
     path('thankyou/<int:id>', thankyou, name="thankyou"),
     ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
