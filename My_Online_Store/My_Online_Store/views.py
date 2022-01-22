@@ -12,8 +12,7 @@ import datetime
 
 
 def register_view(request):
-    context = {}
-    return render(request, 'register.html', context)
+    return render(request, 'register.html')
 
 
 def home_view(request):

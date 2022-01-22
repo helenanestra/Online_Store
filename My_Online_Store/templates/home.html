@@ -2,12 +2,19 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="/static/styles/style.css">
 {% block content %}
+       <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Welcome to Tiny Dogs shop!</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Here you can find everything your pup needs.</p>
+                </div>
+            </div>
+        </header>
 <body>
 <div class="container">
-<h1>Welcome to Tiny Dogs shop!</h1>
-<p>We are here to solve all your problems, where to find the smallest clothes and accessories to your pup?</p>
-<h2>Take a look!</h2>
-<p>Our products are with the highest quality and reasonable price.</p>
+<h2 class="text-center">Take a look!</h2>
+    <a class="nav-link text-center text-pink display-6 fw-bolder" href="/product/list">Shop</a>
+<p class="text-center">Our products are with the highest quality and reasonable price.</p>
 </div>
 </body>
 {% endblock %}
