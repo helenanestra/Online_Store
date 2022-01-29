@@ -1,55 +1,69 @@
-
 footer {
-    clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: -200px;
+	position: sticky;
+	bottom: 0;
+	width: 100%;
 }
 
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+.card {
+	border: 1px solid #eee;
 }
 
-.card button:hover {
-  opacity: 0.7;
-}
-.product-list{
-background-color:;
-padding:3m;
-width:100%;
-}
-.product-list .card{
-background-color:;
-border-radius:10px;
-padding:1em;
-box-shadow: 0px 10px 5px;
-text-align:center;
-max-width: 33.3%;
-}
-.card .title{
-font-size:18px
-font-weight: bold;
-}
-.card img{
-max-width: 100%;
+.product_img {
+	cursor: pointer;
+
 }
 
-.card .product{
-max-width:100%;
-border-radius:5px;
+.weight small {
+	color: #e2dede;
 }
 
-.product-container{
-display:grid;
-grid-template-columns: 1fr;
-grid-column-gap: 20px;
-grid-row-gap:20px
+.buttons {
+	padding: 10px;
+	background-color: #d6d4d44f;
+	border-radius: 4px;
+	position: relative;
+	margin-top: 7px;
+	margin-right: 2px;
+}
+
+.cart-button {
+	height: 48px;
+}
+
+.cart-button:focus {
+	box-shadow: none;
+}
+
+.cart {
+	position: relative;
+	height: 48px !important;
+	width: 50px;
+	margin-right: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	padding: 11px;
+	border-radius: 5px;
+	font-size: 14px;
+	transition: 1s ease-in-out;
+	overflow: hidden;
+}
+
+.cart-button.clicked span.dot {
+	animation: item 0.3s ease-in forwards;
+}
+
+.card:hover .buttons {
+	opacity: 1;
+}
+
+.card:hover .weight {
+	margin-top: 10px;
+}
+
+.card:hover {
+	transform: scale(1.04);
+	z-index: 1;
+	overflow: hidden;
 }

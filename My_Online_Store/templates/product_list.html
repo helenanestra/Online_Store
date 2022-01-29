@@ -12,31 +12,30 @@
 
 {% block content %}
 
-    <div class="product-list">
-        <div>
-        <h1>Featured Products</h1>
-        </div>
-        <div class="product-container">
 
-        <div class="card">
-            {% for product in products %}
+<div>
+    <h1>Featured Products</h1>
+</div>
 
-                <div><img src="/media/{{ product.image }}" width=100 height=100 class="product"></div>
-                <a class="title" href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
-                <div class="price"> €{{ product.price }} </div>
-                <div class="category">{{ product.category.name }}</div>
-                <div> <button data-product="{{ product.pk }}"
-                    data-price="{{ product.price }}"
-                    data-name="{{ product.name }}"
-                    data-image="/media/{{product.image}}"
-                    data-category="{{ product.category.name }}"
-                    type="button" class="btn btn-dark add-to-cart">Add to cart</button></div>
-
-            {% endfor %}
+<div class="row g-1" style="background: #eee;">
+    {% for product in products %}
+    <div class="col-md-3">
+        <div class="card p-3">
+            <div class="text-center"> <img src="/media/{{product.image}}" class ="thumbnail product_img" width="150"></div>
+            <div class="product-details"> <span class="font-weight-bold d-block">€  {{ product.price }}</span> <span> {{ product.name }}</span>
+                <div class="weight"> <small>{{ product.category }}</small> </div>
+                <div class="buttons d-flex flex-row">
+                    <button class="cart"><a href="/cart/"><i class="fa fa-shopping-cart" style="font-size:24px;color:black"></i></a></button>
+                    <a role="button" class="btn btn-dark cart-button btn-block add-to-cart" data-product="{{ product.pk }}" data-price="{{ product.price }}" data-name="{{ product.name }}"
+                    data-image="/media/{{product.image}}" data-category="{{ product.category.name }}">Add to cart </a>
+                    <a href="{% url 'product_detail' product.pk %}" class="btn btn-dark" role="button">View</a>
                 </div>
+            </div>
         </div>
-        </div>
-    <a href="{% url 'product_create' %}">Add product</a>
+    </div>
+    {% endfor %}
+</div>
+<!--    <a href="{% url 'product_create' %}">Add product</a>-->
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
