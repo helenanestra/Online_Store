@@ -27,7 +27,9 @@ You can find these under requirements.txt :
 
 ### Screenshot
 
+
 ![Homepage to my Online Store](https://user-images.githubusercontent.com/85385331/151650070-77028816-f64b-4819-bea8-18d70416ece2.png "Homepage")
+
 
 ![This is a product list page](https://user-images.githubusercontent.com/85385331/151650121-779308f6-6840-491a-bc9f-8cc487ad14fe.png "Productlist")
 
