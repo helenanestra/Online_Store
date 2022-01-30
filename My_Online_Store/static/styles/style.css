@@ -17,6 +17,7 @@
 	cursor: pointer;
 	border-radius: 5px;  /* Rounded border */
     max-width: 200px; /* Set a small width */
+    margin:20px;
 }
 
 .weight small {
